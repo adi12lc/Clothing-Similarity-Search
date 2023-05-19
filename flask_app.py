@@ -33,7 +33,7 @@ df['embeddings'] = df['detail_description'].apply(lambda x: model.encode(x))
 # Route for recommendation
 @app.route('/', methods=['GET', 'POST'])
 def recommend():
-    # Initialize recommendation and link lists
+    # Initialize recommendation, links, User description  and Index
     recommendations = [None] * 5
     links = [None] * 5
     user_description = "Description"
