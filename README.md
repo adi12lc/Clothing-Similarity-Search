@@ -109,3 +109,11 @@ gcloud run deploy --image gcr.io/your-project-id/clothing-similarity-search --pl
 6. Follow the prompts to select a region and configure the deployment.
 
 7. Once the deployment is complete, you will receive a URL where the application is accessible.
+
+-----------
+
+https://ml-app-vt5twwhjza-uc.a.run.app/
+
+Please utilize the provided link to access the web application that has been deployed on Google Cloud Platform (GCP) and assess its performance.
+
+Note : The provided link may experience a delay in loading during its initial instance. Please be advised that the loading process might require some additional time to complete.
