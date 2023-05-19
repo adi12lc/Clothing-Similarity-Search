@@ -1,6 +1,3 @@
-# Clothing-Similarity-Search
-Sure! Here's an example of a detailed README file for your GitHub repository that explains your clothing similarity search project using NLP, including the data scraping, similarity modeling, and deployment process:
-
 # Clothing Similarity Search using NLP
 
 This project aims to provide a clothing similarity search system using Natural Language Processing (NLP) techniques. It utilizes web scraping to gather clothing descriptions from the Amazon website, performs similarity modeling using Sentence Transformers, and deploys the application using Flask, Docker, and Google Cloud Run.
