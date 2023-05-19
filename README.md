@@ -37,7 +37,7 @@ The project follows the following steps:
 
 Before running the application, ensure you have the following dependencies installed:
 
-- Python (3.7 or higher)
+- Python (3.9 or higher)
 - Flask
 - Docker
 - Google Cloud SDK (for deployment)
@@ -69,14 +69,14 @@ To use the clothing similarity search system locally, follow these steps:
 1. Run the Flask application:
 
 ```
-python app.py
+python flask_app.py
 ```
 
-2. Open your web browser and navigate to `http://localhost:5000` to access the application.
+2. Open your web browser and navigate to `http://localhost:8080` to access the application.
 
-3. Enter a description of the clothing item you are looking for in the input box and click the "Search" button.
+3. Enter a description of the clothing item you are looking for in the input box and click the "Get recommendation" button.
 
-4. The system will display a list of clothing items from the dataset that are most similar to your input description.
+4. The system will display a list of clothing items from the Amazon that are most similar to your input description.
 
 ## Deployment
 
@@ -89,7 +89,15 @@ To deploy the application on Google Cloud Run, follow these steps:
 3. Build the Docker image for the application:
 
 ```
-gcloud builds submit --tag gcr.io/your-project-id/clothing-similarity-search
+docker build -t gcr.io/<your-gcp-project-id>/clothing-similarity-search .
+```
+Replace `<your-gcp-project-id>` with your actual Google Cloud project ID.
+
+After building the app, push it to Google Cloud:
+
+```
+gcloud auth configure-docker
+docker push gcr.io/<your-gcp-project-id>/clothing-similarity-search
 ```
 
 4. Deploy the application to Google Cloud Run:
@@ -101,25 +109,3 @@ gcloud run deploy --image gcr.io/your-project-id/clothing-similarity-search --pl
 5. Follow the prompts to select a region and configure the deployment.
 
 6. Once the deployment is complete, you will receive a URL where the application is accessible.
-
-## Contributing
-
-Contributions to this project are welcome. To contribute, follow these steps:
-
-1. Fork the repository.
-
-2. Create a new branch for your feature or bug fix:
-
-```
-git checkout -b feature/your-feature
-```
-
-3. Make your modifications and commit your changes.
-
-4. Push your branch to your forked repository:
-
-```
-git push origin feature/your-feature
-```
-
-5. Open a pull request in the original repository
