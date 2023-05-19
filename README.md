@@ -91,21 +91,21 @@ To deploy the application on Google Cloud Run, follow these steps:
 ```
 docker build -t gcr.io/<your-gcp-project-id>/clothing-similarity-search .
 ```
-Replace `<your-gcp-project-id>` with your actual Google Cloud project ID.
+   Replace `<your-gcp-project-id>` with your actual Google Cloud project ID.
 
-After building the app, push it to Google Cloud:
+4. After building the app, push it to Google Cloud:
 
 ```
 gcloud auth configure-docker
 docker push gcr.io/<your-gcp-project-id>/clothing-similarity-search
 ```
 
-4. Deploy the application to Google Cloud Run:
+5. Deploy the application to Google Cloud Run:
 
 ```
 gcloud run deploy --image gcr.io/your-project-id/clothing-similarity-search --platform managed
 ```
 
-5. Follow the prompts to select a region and configure the deployment.
+6. Follow the prompts to select a region and configure the deployment.
 
-6. Once the deployment is complete, you will receive a URL where the application is accessible.
+7. Once the deployment is complete, you will receive a URL where the application is accessible.
