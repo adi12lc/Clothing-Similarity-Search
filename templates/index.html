@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clothing Recommendation System</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+  <style>
+    .center-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <style>
+    textarea {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+    }
+  </style>  
+</head>
+<body>
+    <h2>Describe the item you're looking for:</h2>
+    <form action = "/" method = "POST">
+      <textarea id="description" name="description" rows="10" cols="20" value="{{ description }}">{{ description }}
+      </textarea>
+      <br/>
+      <div class="center-button">
+        <input type="submit" value="Get Recommendation">
+      </div>
+    </form>
+
+    {% if request.method == 'POST' and recommendations %}
+        <h2>Recommended items for you:</h2>
+        <style>
+          p {
+              font-family: Arial, sans-serif; /* change the font */
+              font-size: 20px; /* make the text larger */
+              color: #333; /* change the color */
+          }
+        
+          p a {
+              color: #1500fffb; /* change the color of the link to red */
+              text-decoration: none;
+              text-decoration: underline;  /* remove the underline */
+          }
+        
+          p a:hover {
+              color: #007acc; /* change the color of the link when hovered to a darker red */
+              /* text-decoration: underline;  add underline when hovered */
+          }
+        
+          strong {
+              color: #000; /* change the color of the strong text */
+              font-size: 24px; /* make the strong text larger */
+              font-family: 'Courier New', monospace; /* change the font of the strong text */
+          }
+        </style>
+        <ul>
+            {% for recommendation, link, index in recommendations %}
+                      <p><strong>{{ index }}.&nbsp;</strong><a href="{{ link }}">{{ recommendation }}</a></p>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
+
