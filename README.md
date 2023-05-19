@@ -25,7 +25,7 @@ The project addresses the problem of finding clothing items that closely match a
 The Clothing Similarity Search project utilizes NLP techniques to enable users to search for clothing items based on their descriptions. The system is designed to recommend clothing items from a dataset scraped from the Amazon website that are most similar to the user's input.
 
 The project follows the following steps:
-1. Web scraping: Data is collected by scraping clothing descriptions from the Amazon website and stored in Google cloud stoarge buckets.
+1. Web scraping: Data is collected by scraping clothing descriptions from the Amazon website and stored in Google cloud stoarge buckets. The data is restricted to a limited range of clothing categories.
 2. Similarity modeling: Sentence Transformers are used to convert clothing descriptions into numerical representations, enabling similarity comparisons.
 3. Recommendation: Based on the user's input description, the system recommends clothing items with similar descriptions.
 4. Deployment: The application is deployed using Flask and Docker, making it accessible through the web.
