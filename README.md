@@ -1,6 +1,6 @@
 # Clothing Similarity Search using NLP
 
-This project aims to provide a clothing similarity search system using Natural Language Processing (NLP) techniques. It utilizes web scraping to gather clothing descriptions from the Amazon website, performs similarity modeling using Sentence Transformers, and deploys the application using Flask, Docker, and Google Cloud Run.
+This project aims to provide a clothing similarity search system using Natural Language Processing (NLP) techniques. It utilizes web scraping to gather clothing descriptions from the Amazon website, performs similarity modeling using Sentence Transformers, and deploying the application using Flask, Docker onto the Google Cloud Run.
 
 ## Motivation:
 The motivation behind building this project is to provide users with an efficient and convenient way to search for clothing items based on their descriptions. Traditional search methods often rely on keyword matching, which may not capture the full context or nuances of a user's description. By utilizing NLP techniques, we can enhance the search capabilities and improve the user experience by providing more accurate and relevant recommendations.
@@ -28,7 +28,7 @@ The project follows the following steps:
 1. Web scraping: Data is collected by scraping clothing descriptions from the Amazon website and stored in Google cloud stoarge buckets. The data is restricted to a limited range of clothing categories.
 2. Similarity modeling: Sentence Transformers are used to convert clothing descriptions into numerical representations, enabling similarity comparisons.
 3. Recommendation: Based on the user's input description, the system recommends clothing items with similar descriptions.
-4. Deployment: The application is deployed using Flask and Docker, making it accessible through the web.
+4. Deployment: The application is deployed on Google cloud run using Flask and Docker, making it accessible through the web.
 
 ## Prerequisites
 
