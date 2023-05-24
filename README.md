@@ -17,7 +17,7 @@ The project addresses the problem of finding clothing items that closely match a
 - [Installation](#installation)
 - [Usage](#usage)
 - [Deployment](#deployment)
-- [Web App](#Web App)
+- [WebApp](#WebApp)
 
 ## Introduction
 
@@ -106,8 +106,7 @@ gcloud run deploy --image gcr.io/your-project-id/clothing-similarity-search --pl
 
 7. Once the deployment is complete, you will receive a URL where the application is accessible.
 
------------
-## Web App
+## WebApp
 
 https://ml-app-vt5twwhjza-uc.a.run.app/
 
