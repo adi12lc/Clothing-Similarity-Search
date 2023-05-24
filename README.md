@@ -17,7 +17,7 @@ The project addresses the problem of finding clothing items that closely match a
 - [Installation](#installation)
 - [Usage](#usage)
 - [Deployment](#deployment)
-- [Web App](# Web App)
+- [Web App](#Web App)
 
 ## Introduction
 
