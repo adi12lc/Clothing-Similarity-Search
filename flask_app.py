@@ -34,9 +34,9 @@ class Embeddings:
         self.df['embeddings'] = list(self.model.encode(descriptions))
 
     def get_similar_items(self, description, n=5):
-        # Get the n most similar items to a given description
-        # Compute the cosine similarity between the provided description and stored embeddings
+        # Get user's description
         user_embedding = self.model.encode([description])
+        # Compute the cosine similarity between the provided description and stored embeddings
         self.df['similarity'] = cosine_similarity(np.vstack(self.df['embeddings'].values), user_embedding)
         top_indexes = self.df['similarity'].argsort()[-n:][::-1]  # Get the indices of top-n similar items
         recommendations = self.df.loc[top_indexes, 'title'].tolist()  # Get the titles of recommended items
@@ -45,7 +45,7 @@ class Embeddings:
 
 # SQL query to fetch data "newprojv1" - GCP project ID, "clothadi" - dataset name, "clothsearch" - table name.
 query = "SELECT * FROM `newprojv1.clothadi.clothsearch`"
-# Instantiate the EmbeddingStorage class
+# Instantiate the Embedding class
 storage = Embeddings(query, model)
 
 # Define a route for the recommendation system
