@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Clothing Similarity Search System</title>
-  <!-- Link to external stylesheet -->
+  <!-- Link to external stylesheet, which is in static directory -->
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -24,7 +24,7 @@
     <h2>Recommended items for you:</h2>
     <ul>
       {% for recommendation, link, index in recommendations %}
-        <!-- Display each recommended item with a link -->
+        <!-- Display similar items with a link -->
         <p><strong>{{ index }}.&nbsp;</strong><a href="{{ link }}">{{ recommendation }}</a></p>
       {% endfor %}
     </ul>
