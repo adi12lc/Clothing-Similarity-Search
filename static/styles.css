@@ -35,3 +35,37 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #45a049;
 }
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+textarea {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+p {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: #333;
+}
+
+p a {
+  color: #1500fffb;
+  text-decoration: none;
+  text-decoration: underline;
+}
+
+p a:hover {
+  color: #007acc;
+}
+
+strong {
+  color: #000;
+  font-size: 24px;
+  font-family: 'Courier New', monospace;
+}
+
