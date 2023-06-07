@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Clothing Recommendation System</title>
+  <title>Clothing Similarity Search System</title>
   <!-- Link to external stylesheet -->
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
@@ -15,13 +15,13 @@
     <br/>
     <!-- Button to submit the form -->
     <div class="center-button">
-      <input type="submit" value="Get Recommendation">
+      <input type="submit" value="Search similar items">
     </div>
   </form>
 
   {% if request.method == 'POST' and recommendations %}
     <!-- Heading for recommended items -->
-    <h2>Recommended items for you:</h2>
+    <h2>Similar items for you:</h2>
     <ul>
       {% for recommendation, link, index in recommendations %}
         <!-- Display each recommended item with a link -->
