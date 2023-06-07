@@ -108,7 +108,7 @@ gcloud run deploy --image gcr.io/your-project-id/clothing-similarity-search --pl
 
 ## WebApp
 
-[https://ml-app-vt5twwhjza-uc.a.run.app/](https://clothing-similarity-search-vt5twwhjza-uc.a.run.app/)
+[https://clothing-similarity-search-vt5twwhjza-uc.a.run.app/](https://clothing-similarity-search-vt5twwhjza-uc.a.run.app/)
 
 Please utilize the provided link to access the web application that has been deployed on Google Cloud Platform (GCP) and assess its performance.
 
