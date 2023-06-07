@@ -101,6 +101,7 @@ docker push gcr.io/<your-gcp-project-id>/clothing-similarity-search
 ```
 gcloud run deploy --image gcr.io/your-project-id/clothing-similarity-search --platform managed
 ```
+Note : If you encounter a memory error or any other error when executing the previous command, please create a service on Cloud Run by selecting the image you have previously pushed.
 
 6. Follow the prompts to select a region and configure the deployment.
 
