@@ -43,7 +43,7 @@ class Embeddings:
         links = self.df.loc[top_indexes, 'URL'].tolist()  # Get the URLs of recommended items
         return recommendations, links
 
-# SQL query to fetch data
+# SQL query to fetch data "newprojv1" - GCP project ID, "clothadi" - dataset name, "clothsearch" - table name.
 query = "SELECT * FROM `newprojv1.clothadi.clothsearch`"
 # Instantiate the EmbeddingStorage class
 storage = Embeddings(query, model)
