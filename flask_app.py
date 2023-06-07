@@ -1,8 +1,7 @@
 from sentence_transformers import SentenceTransformer
 from flask import Flask, request, render_template
 import pandas as pd
-from google.cloud import storage
-from io import BytesIO
+from google.cloud import bigquery
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 
@@ -13,19 +12,24 @@ app.config["PORT"] = 8080
 # Initialize SentenceTransformer model
 model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
-def download_blob(bucket_name, source_blob_name):
-            """Downloads a blob from the bucket."""
-            storage_client = storage.Client()
-            bucket = storage_client.bucket(bucket_name)
-            blob = bucket.blob(source_blob_name)
-            return blob.download_as_bytes()
+def get_bigquery_data():
+            
+    # Create a BigQuery client
+    client = bigquery.Client()
 
-def read_csv_from_gcs(bucket_name, source_blob_name):
-            csv_bytes = download_blob(bucket_name, source_blob_name)
-            return pd.read_csv(BytesIO(csv_bytes))
+    # Define your BigQuery SQL query
+    query =  " SELECT * FROM `newprojv1.clothadi.clothsearch` "
+
+    # Execute the query
+    query_job = client.query(query)
+
+    # Fetch the results as a pandas DataFrame
+    df = query_job.to_dataframe()
+
+    return df
 
 # Read the CSV file from the google cloud bucket 
-df = read_csv_from_gcs('cloth_project_data', 'Cloth_description_data.csv')
+df = get_bigquery_data()
 
 # Encode detail descriptions
 df['embeddings'] = df['detail_description'].apply(lambda x: model.encode(x))
@@ -33,7 +37,7 @@ df['embeddings'] = df['detail_description'].apply(lambda x: model.encode(x))
 # Route for recommendation
 @app.route('/', methods=['GET', 'POST'])
 def recommend():
-    # Initialize recommendation, links, User description  and Index
+    # Initialize recommendation and link lists
     recommendations = [None] * 5
     links = [None] * 5
     user_description = "Description"
