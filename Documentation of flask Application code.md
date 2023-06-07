@@ -40,6 +40,4 @@ This documentation explains a Flask-based recommendation system application that
 
 - **Step 7:** The Flask application is run, starting the server and listening for incoming connections on the configured host and port.
 
-Please ensure that you have all the necessary libraries installed, and the BigQuery data is accessible from your environment. You also need to have a
-
- template named 'index.html' in a templates folder in your project directory. This template should be designed to properly display the information passed to it from the `recommend()` function.
+Please ensure that you have all the necessary libraries installed, and the BigQuery data is accessible from your environment.
