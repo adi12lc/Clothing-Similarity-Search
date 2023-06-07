@@ -21,7 +21,7 @@
 
   {% if request.method == 'POST' and recommendations %}
     <!-- Heading for recommended items -->
-    <h2>Similar items for you:</h2>
+    <h2>Recommended items for you:</h2>
     <ul>
       {% for recommendation, link, index in recommendations %}
         <!-- Display each recommended item with a link -->
